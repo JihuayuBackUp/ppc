@@ -10,6 +10,9 @@ process.nextTick(async () => {
     for (let index = Number(process.env.begin); index < Number(process.env.end); index++) {
         let num = 0;
         while (++num) {
+            if (num>15){
+                break;
+            }
             mkdirSync(`pic/${index}/${num}`,{recursive:true})
             try {
                 const nownum = num;
