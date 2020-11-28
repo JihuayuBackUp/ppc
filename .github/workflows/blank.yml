@@ -31,3 +31,8 @@ jobs:
         env:
           begin: ${{ github.event.inputs.begin }} 
           end: ${{ github.event.inputs.end }} 
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: pp
+          path: ./pic/
