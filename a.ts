@@ -18,13 +18,11 @@ process.nextTick(async () => {
                 $('#content > p > img').each(async (i, j) => {
                     try {
                         const ret = await got.get(j.attribs.src);
-                        console.log(j.attribs.src)
                         const r = extname(j.attribs.src)
                         console.log(`save ${j.attribs.src} to ./pic/${index}/${nownum}/${i}${r}`)
                         writeFileSync(`./pic/${index}/${nownum}/${i}${r}`, ret.rawBody,{encoding:'binary'})
                     }
                     catch (e) {
-                        console.error(e)
                         console.error(`error download ${index} ${nownum} ${i}`)
                     }
                 })
