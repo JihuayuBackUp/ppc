@@ -7,7 +7,7 @@ const cheerio = require('cheerio');
 const url = `https://asiansister.com/`
 
 process.nextTick(async () => {
-    for (let index = Number(1000); index < Number(1003); index++) {
+    for (let index = Number(process.env.begin); index < Number(process.env.end); index++) {
         let num = 0;
         while (++num) {
             if (num > 100) {
